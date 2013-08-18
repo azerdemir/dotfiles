@@ -10,4 +10,5 @@ alias ..='cd ..'
 alias cls='clear'
 
 alias art='php artisan'
+alias sconsole='php app/console'
 
