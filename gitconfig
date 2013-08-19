@@ -1,5 +1,6 @@
 [push]
     default = tracking
+
 [user]
     name = Azer Demir
     email = azer.demir@gmail.com
@@ -11,10 +12,16 @@
     ci = commit
     co = checkout
     br = branch
+
 [branch "master"]
     rebase = true
+
 [branch]
     autosetuprebase = always
+
 [color]
     ui = true
+
+[core]
+    excludesfile = ~/.gitignore
 
