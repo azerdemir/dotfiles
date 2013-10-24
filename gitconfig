@@ -12,6 +12,7 @@
     ci = commit
     co = checkout
     br = branch
+    rl = push production master
 
 [branch "master"]
     rebase = true
@@ -24,4 +25,5 @@
 
 [core]
     excludesfile = ~/.gitignore
+	autocrlf = input
 
