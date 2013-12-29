@@ -12,3 +12,8 @@ alias cls='clear'
 alias art='php artisan'
 alias sconsole='php app/console'
 
+alias gs='git st'
+alias ga='git a'
+alias gaa='git a .'
+alias gc='git ci'
+alias gl='git lg'
