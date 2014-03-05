@@ -18,9 +18,14 @@ set gdefault
 set incsearch
 set number
 
+set t_Co=256
+
 syntax enable
+set background=dark
+colorscheme solarized
 
 set cursorline
+set colorcolumn=120
 
 " Statusline {{{
 hi User1 ctermbg=white    ctermfg=black   guibg=#89A1A1 guifg=#002B36
