@@ -20,6 +20,7 @@ alias gc='git ci'
 alias gp='git push'
 alias gpl='git pull'
 alias grl='git rl'
+alias gd='git diff'
 
 alias vup='vagrant up'
 alias vhalt='vagrant halt'
