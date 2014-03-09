@@ -6,6 +6,7 @@ Right now, repo contains aliases and gitconfig files. For both, it'll be good to
     ln -s <dotfiles_path>/gitconfig ~/.gitconfig
     ln -s <dotfiles_path>/vimrc ~/.vimrc
     ln -s <dotfiles_path>/gvimrc ~/.gvimrc
+    ln -s <dotfiles_path>/tmux.conf ~/.tmux.conf
     
 *.gitconfig* file will be recognized by **git**, if it's installed. For *.aliases* file, you should add a line to your current shell's configuration file (`~/.bashrc` or `~/.zshrc`).
 
