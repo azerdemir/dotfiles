@@ -43,28 +43,31 @@ function! GetName()
     return expand("%:t")==''?'<none>':expand("%:t")
 endfunction
 
-set statusline=%1*[%{GetName()}]\ 
-set statusline+=%<pwd:%{getcwd()}\ 
-set statusline+=%2*%{&modified?'\[+]':''}%*
-set statusline+=%{IsHelp()}
-set statusline+=%{&readonly?'\ (ro)\ ':''}
-set statusline+=[
-set statusline+=%{strlen(&fenc)?&fenc:'none'}\|
-set statusline+=%{&ff}\|
-set statusline+=%{strlen(&ft)?&ft:'<none>'}
-set statusline+=]\ 
-set statusline+=%=
-set statusline+=c%c
-set statusline+=,l%l
-set statusline+=/%L\ 
+"set statusline=%1*[%{GetName()}]\ 
+"set statusline+=%<pwd:%{getcwd()}\ 
+"set statusline+=%2*%{&modified?'\[+]':''}%*
+"set statusline+=%{IsHelp()}
+"set statusline+=%{&readonly?'\ (ro)\ ':''}
+"set statusline+=[
+"set statusline+=%{strlen(&fenc)?&fenc:'none'}\|
+"set statusline+=%{&ff}\|
+"set statusline+=%{strlen(&ft)?&ft:'<none>'}
+"set statusline+=]\ 
+"set statusline+=%=
+"set statusline+=c%c
+"set statusline+=,l%l
+"set statusline+=/%L\ 
 
 set laststatus=2
 
 " }}}
 
-"python from powerline.vim import setup as powerline_setup
-"python powerline_setup()
-"python del powerline_setup
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
 
-"let g:Powerline_symbols = 'fancy'
-"set fillchars+=stl:\ ,stlnc:\
+let g:Powerline_symbols = 'fancy'
+set fillchars+=stl:\ ,stlnc:\
+
+" Timeout value to fix normal mode delay
+set timeoutlen=100 ttimeoutlen=0
