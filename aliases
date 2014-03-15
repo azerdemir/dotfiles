@@ -4,14 +4,13 @@
 #                        #
 ##########################
 
+# os aliases
 alias l='ls -l'
 alias la='ls -alh'
 alias ..='cd ..'
 alias cls='clear'
 
-alias art='php artisan'
-alias sconsole='php app/console'
-
+# git aliases
 alias gs='git st'
 alias gl='git lg'
 alias ga='git a'
@@ -22,6 +21,7 @@ alias gpl='git pull'
 alias grl='git rl'
 alias gd='git diff'
 
+# vagrant aliases
 alias vup='vagrant up'
 alias vhalt='vagrant halt'
 alias vssh='vagrant ssh'
