@@ -8,9 +8,11 @@ Right now, repo contains aliases and gitconfig files. For both, it'll be good to
     ln -s <dotfiles_path>/gvimrc ~/.gvimrc
     ln -s <dotfiles_path>/tmux.conf ~/.tmux.conf
     ln -s <dotfiles_path>/exports ~/.exports
+    ln -s <dotfiles_path>/zshrc ~/.zshrc
     
-*.gitconfig* file will be recognized by **git**, if it's installed. For *.aliases* file, you should add a line to your current shell's configuration file (`~/.bashrc` or `~/.zshrc`).
+*.gitconfig* file will be recognized by **git**, if it's installed. For *.aliases* and *.exports* files, you should add a line to your current shell's configuration file (`~/.bashrc` or `~/.zshrc`).
 
     source ~/.aliases
+    source ~/.exports
     
 For Vim, I added pathogen for plugins. You can find installation instructions for pathogen [here](https://github.com/tpope/vim-pathogen).
