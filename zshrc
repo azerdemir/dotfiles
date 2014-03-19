@@ -62,6 +62,11 @@ if [ -f ~/.exports ]; then
   . ~/.exports
 fi
 
+# Source .local_exports file if exists
+if [ -f ~/.local_exports ]; then
+  . ~/.local_exports
+fi
+
 # Source .aliases file if exists
 if [ -f ~/.aliases ]; then
   . ~/.aliases
