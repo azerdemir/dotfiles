@@ -1,11 +1,21 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
+# Add shell configuration variables if exist
+if [ -f ~/.shconf ]; then
+  . ~/.shconf
+fi
+
+# Set OVERRIDDEN_ZSH_THEME variable to "ys" if not set
+if [ -z "$OVERRIDDEN_ZSH_THEME"  ]; then
+  $OVERRIDDEN_ZSH_THEME="ys"
+fi
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="ys"
+ZSH_THEME=$OVERRIDDEN_ZSH_THEME
 
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
@@ -46,6 +56,18 @@ KEYTIMEOUT=1
 plugins=(git brew colored-man tmux vagrant)
 
 source $ZSH/oh-my-zsh.sh
-source ~/.exports
-source ~/.aliases
-source ~/.local_aliases
+
+# Source .exports file if exists 
+if [ -f ~/.exports ]; then
+  . ~/.exports
+fi
+
+# Source .aliases file if exists
+if [ -f ~/.aliases ]; then
+  . ~/.aliases
+fi
+
+# Source .local_aliases file if exists
+if [ -f ~/.local_aliases ]; then
+  . ~/.local_aliases
+fi
