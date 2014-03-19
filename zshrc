@@ -7,8 +7,8 @@ if [ -f ~/.shconf ]; then
 fi
 
 # Set OVERRIDDEN_ZSH_THEME variable to "ys" if not set
-if [ -z "$OVERRIDDEN_ZSH_THEME"  ]; then
-  $OVERRIDDEN_ZSH_THEME="ys"
+if [ -z "$OVERRIDDEN_ZSH_THEME" ]; then
+  OVERRIDDEN_ZSH_THEME="ys"
 fi
 
 # Set name of the theme to load.
