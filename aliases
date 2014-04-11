@@ -29,3 +29,6 @@ alias vsus='vagrant suspend'
 alias vrel='vagrant reload'
 alias vprov='vagrant provision'
 alias vinit='vagrant init'
+
+# rails aliases
+alias rpr='pry -r ./config/environment'
