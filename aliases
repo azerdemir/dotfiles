@@ -32,3 +32,6 @@ alias vinit='vagrant init'
 
 # rails aliases
 alias rpr='pry -r ./config/environment'
+
+# various aliases
+alias muxkill='killall tmux'
