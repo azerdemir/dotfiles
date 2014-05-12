@@ -1,9 +1,17 @@
 set nocompatible
-call pathogen#infect()
+filetype off
 
-filetype on
-filetype indent on
-filetype plugin on
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'fatih/vim-go'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+call vundle#end()
+
+filetype plugin indent on
 
 set ignorecase
 set hlsearch
@@ -27,40 +35,7 @@ colorscheme solarized
 set cursorline
 set colorcolumn=120
 
-" Statusline {{{
-hi User1 ctermbg=white    ctermfg=black   guibg=#89A1A1 guifg=#002B36
-hi User2 ctermbg=red      ctermfg=white   guibg=#aa0000 guifg=#89a1a1
-
-function! GetCWD()
-    return expand(":pwd")
-endfunction
-
-function! IsHelp()
-    return &buftype=='help'?' (help) ':''
-endfunction
-
-function! GetName()
-    return expand("%:t")==''?'<none>':expand("%:t")
-endfunction
-
-"set statusline=%1*[%{GetName()}]\ 
-"set statusline+=%<pwd:%{getcwd()}\ 
-"set statusline+=%2*%{&modified?'\[+]':''}%*
-"set statusline+=%{IsHelp()}
-"set statusline+=%{&readonly?'\ (ro)\ ':''}
-"set statusline+=[
-"set statusline+=%{strlen(&fenc)?&fenc:'none'}\|
-"set statusline+=%{&ff}\|
-"set statusline+=%{strlen(&ft)?&ft:'<none>'}
-"set statusline+=]\ 
-"set statusline+=%=
-"set statusline+=c%c
-"set statusline+=,l%l
-"set statusline+=/%L\ 
-
 set laststatus=2
-
-" }}}
 
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
@@ -71,3 +46,17 @@ set fillchars+=stl:\ ,stlnc:\
 
 " Timeout value to fix normal mode delay
 set timeoutlen=100 ttimeoutlen=0
+
+" vim-go plugin settings
+let g:go_disable_autoinstall=1
+let g:go_gocode_bin="$GOBIN/gocode"
+let g:go_goimports_bin="$GOBIN/goimports"
+let g:go_godef_bin="$GOBIN/godef"
+let g:go_oracle_bin="$GOBIN/oracle"
+let g:go_golint_bin="$GOBIN/golint"
+let g:go_errcheck_bin="$GOBIN/errcheck"
+
+" UltiSnips trigger configuration
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
