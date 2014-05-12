@@ -5,10 +5,11 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'fatih/vim-go'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'fatih/vim-go'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'tomasr/molokai'
 call vundle#end()
 
 filetype plugin indent on
@@ -30,7 +31,7 @@ set t_Co=256
 
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme molokai 
 
 set cursorline
 set colorcolumn=120
