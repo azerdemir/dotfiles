@@ -1,6 +1,6 @@
 # My Dotfiles
 
-Right now, repo contains aliases and gitconfig files. For both, it'll be good to create symlinks in your home directory.
+Repo contains gitconfig, vimrc, gvimrc, tmux.conf and zshrc files. It'll be good to create symlinks in your home directory.
 
     ln -s <dotfiles_path>/gitconfig ~/.gitconfig
     ln -s <dotfiles_path>/vimrc ~/.vimrc
