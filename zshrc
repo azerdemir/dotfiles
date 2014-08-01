@@ -1,21 +1,11 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
-# Add shell configuration variables if exist
-if [ -f ~/.shconf ]; then
-  . ~/.shconf
-fi
-
-# Set OVERRIDDEN_ZSH_THEME variable to "ys" if not set
-if [ -z "$OVERRIDDEN_ZSH_THEME" ]; then
-  OVERRIDDEN_ZSH_THEME="ys"
-fi
-
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME=$OVERRIDDEN_ZSH_THEME
+ZSH_THEME="ys"
 
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
@@ -57,22 +47,30 @@ plugins=(git brew colored-man tmux vagrant rails)
 
 source $ZSH/oh-my-zsh.sh
 
-# Source .exports file if exists 
-if [ -f ~/.exports ]; then
-  . ~/.exports
+# Environment variables
+export EDITOR="vim"
+
+# OS aliases
+alias l="ls -l"
+alias la="ls -alh"
+alias ..="cd .."
+alias cls="clear"
+alias muxkill="killall tmux"
+
+# Git aliases
+alias g="git"
+alias gs="git status"
+alias gl="git lg"
+alias ga="git add"
+alias gaa="git add ."
+alias gc="git commit"
+alias gp="git push"
+alias gpl="git pull"
+alias grl="git push production master"
+alias gd="git diff"
+
+# Source .zshrc.after file if exists 
+if [ -f ~/.zshrc.after ]; then
+  source ~/.zshrc.after
 fi
 
-# Source .local_exports file if exists
-if [ -f ~/.local_exports ]; then
-  . ~/.local_exports
-fi
-
-# Source .aliases file if exists
-if [ -f ~/.aliases ]; then
-  . ~/.aliases
-fi
-
-# Source .local_aliases file if exists
-if [ -f ~/.local_aliases ]; then
-  . ~/.local_aliases
-fi
