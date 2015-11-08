@@ -43,7 +43,7 @@ KEYTIMEOUT=1
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew colored-man tmux vagrant rails)
+plugins=(git git-extras brew colored-man tmux vagrant rails sublime docker docker-compose extract history history-substring-search mvn)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -53,21 +53,7 @@ export EDITOR="vim"
 # OS aliases
 alias l="ls -l"
 alias la="ls -alh"
-alias ..="cd .."
 alias cls="clear"
-alias muxkill="killall tmux"
-
-# Git aliases
-alias g="git"
-alias gs="git status"
-alias gl="git lg"
-alias ga="git add"
-alias gaa="git add ."
-alias gc="git commit"
-alias gp="git push"
-alias gpl="git pull"
-alias grl="git push production master"
-alias gd="git diff"
 
 # Source .zshrc.after file if exists 
 if [ -f ~/.zshrc.after ]; then
