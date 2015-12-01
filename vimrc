@@ -34,7 +34,11 @@ set background=dark
 colorscheme molokai
 set cursorline
 set colorcolumn=120
-set timeoutlen=100 ttimeoutlen=0 "Timeout value to fix normal mode delay
+set timeoutlen=500 ttimeoutlen=0 "Timeout value to fix normal mode delay
+" }}}
+
+" Key bindings {{{
+let mapleader = ","
 " }}}
 
 " vim powerline statusline [disabled] {{{
