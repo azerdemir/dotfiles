@@ -8,6 +8,9 @@ Repo contains gitconfig, vimrc, gvimrc, tmux.conf and zshrc files. It'll be good
     ln -s <dotfiles_path>/tmux.conf ~/.tmux.conf
     ln -s <dotfiles_path>/zshrc ~/.zshrc
     
+    mkdir -p .vim/config
+    ln -s <dotfiles_path>/vim/config/statusline.vim ~/.vim/config/statusline.vim
+    
 *.gitconfig* file will be recognized by **git**, if it's installed.
 
 For Vim, I'm using Vundle for plugins. You can find installation instructions for vundle [here](https://github.com/gmarik/Vundle.vim).

@@ -10,6 +10,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'fatih/vim-go'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
+Plugin 'itchyny/lightline.vim'
 call vundle#end()
 
 filetype plugin indent on
@@ -34,11 +35,13 @@ set background=dark
 colorscheme molokai
 set cursorline
 set colorcolumn=120
+set laststatus=2
 set timeoutlen=500 ttimeoutlen=0 "Timeout value to fix normal mode delay
 " }}}
 
 " Key bindings {{{
-let mapleader = ","
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+au FileType go nmap <leader>r <Plug>(go-run)
 " }}}
 
 " vim powerline statusline [disabled] {{{
@@ -49,39 +52,8 @@ let mapleader = ","
 "set fillchars+=stl:\ ,stlnc:\
 " }}}
 
-" Statusline {{{
-hi User1 ctermbg=white ctermfg=black guibg=#89A1A1 guifg=#002B36
-hi User2 ctermbg=red ctermfg=white guibg=#aa0000 guifg=#89a1a1
-
-function! GetCWD()
-  return expand(":pwd")
-endfunction
-
-function! IsHelp()
-  return &buftype=='help'?' (help) ':''
-endfunction
-
-function! GetName()
-  return expand("%:t")==''?'<none>':expand("%:t")
-endfunction
-
-set statusline=%1*[%{GetName()}]\ 
-set statusline+=%<pwd:%{getcwd()}\ 
-set statusline+=%2*%{&modified?'\[+]':''}%*
-set statusline+=%{IsHelp()}
-set statusline+=%{&readonly?'\ (ro)\ ':''}
-set statusline+=[
-set statusline+=%{strlen(&fenc)?&fenc:'none'}\|
-set statusline+=%{&ff}\|
-set statusline+=%{strlen(&ft)?&ft:'<none>'}
-set statusline+=]\ 
-set statusline+=%=
-set statusline+=c%c
-set statusline+=,l%l
-set statusline+=/%L\ 
-
-set laststatus=2
-
+" Statusline [disabled] {{{
+"source ~/.vim/config/statusline.vim
 " }}}
 
 " vim-go plugin settings {{{
