@@ -41,6 +41,7 @@ set timeoutlen=500 ttimeoutlen=0 "Timeout value to fix normal mode delay
 
 " Key bindings {{{
 let mapleader=","
+nmap <leader>l :set list!<CR>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 au FileType go nmap <leader>r <Plug>(go-run)
 " }}}

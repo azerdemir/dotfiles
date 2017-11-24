@@ -1,0 +1,12 @@
+if [ -d "$HOME/Projects/go_ws" ]; then
+  GOPATH="$HOME/Projects/go_ws"
+  GO_BIN="$GOPATH/bin"
+
+  export GOPATH
+  export GO_BIN
+
+  case ":$PATH:" in
+    *":$GO_BIN:"*) :;;
+    *) PATH="$GO_BIN:$PATH";;
+  esac
+fi

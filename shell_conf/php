@@ -1,0 +1,6 @@
+COMPOSER_BIN="$HOME/.composer/vendor/bin"
+
+case ":$PATH:" in
+  *":$COMPOSER_BIN:"*) :;;
+  *) PATH="$COMPOSER_BIN:$PATH";;
+esac

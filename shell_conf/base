@@ -1,0 +1,12 @@
+# Rbenv
+if [ -d "$HOME/.rbenv" ]; then
+  RBENV_BIN="$HOME/.rbenv/bin"
+
+  case ":$PATH:" in
+    *":$RBENV_BIN:"*) :;;
+    *) PATH="$RBENV_BIN:$PATH";;
+  esac
+
+  eval "$(rbenv init -)"
+fi
+

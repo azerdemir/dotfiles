@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="ys"
+ZSH_THEME="lambda-mod"
 
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
@@ -55,8 +55,19 @@ alias l="ls -l"
 alias la="ls -alh"
 alias cls="clear"
 
-# Source .zshrc.after file if exists 
-if [ -f ~/.zshrc.after ]; then
-  source ~/.zshrc.after
-fi
+SHELL_CONF_PATH="$HOME/Repos/dotfiles/shell_conf"
+
+confs=(base osx git go java php docker gg anaconda)
+
+# Loop through shell configuration files
+for i in "${confs[@]}"
+do
+  # Source file, if it exists
+  if [ -f "$SHELL_CONF_PATH/$i" ]; then
+    source "$SHELL_CONF_PATH/$i"
+  fi
+done
+
+# Export $PATH environment variable
+export PATH
 
