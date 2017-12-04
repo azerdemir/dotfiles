@@ -4,3 +4,6 @@ case ":$PATH:" in
   *":$COMPOSER_BIN:"*) :;;
   *) PATH="$COMPOSER_BIN:$PATH";;
 esac
+
+alias cup="composer update --ignore-platform-reqs"
+
