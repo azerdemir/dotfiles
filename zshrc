@@ -57,7 +57,7 @@ alias cls="clear"
 
 SHELL_CONF_PATH="$HOME/Repos/dotfiles/shell_conf"
 
-confs=(base osx git go java php docker gg anaconda)
+confs=(base osx git go java php docker gg anaconda data_science)
 
 # Loop through shell configuration files
 for i in "${confs[@]}"
@@ -70,4 +70,6 @@ done
 
 # Export $PATH environment variable
 export PATH
+
+source $HOME/Repos/goto/goto.sh
 
