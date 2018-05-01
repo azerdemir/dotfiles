@@ -5,7 +5,8 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="lambda-mod"
+#ZSH_THEME="lambda-mod"
+ZSH_THEME="dracula"
 
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
@@ -57,7 +58,7 @@ alias cls="clear"
 
 SHELL_CONF_PATH="$HOME/Repos/dotfiles/shell_conf"
 
-confs=(base osx git go java php docker gg anaconda data_science)
+confs=(base osx git go java php docker gg)
 
 # Loop through shell configuration files
 for i in "${confs[@]}"
@@ -72,4 +73,3 @@ done
 export PATH
 
 source $HOME/Repos/goto/goto.sh
-
