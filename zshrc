@@ -1,3 +1,8 @@
+# Source .zshrc.before file if exists 
+if [ -f "$HOME/.zshrc.before" ]; then
+    source "$HOME/.zshrc.before"
+fi
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -52,19 +57,19 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR="vim"
 SHELL_CONF_PATH="$HOME/.shell_conf"
 
-# source configuration files
-source $SHELL_CONF_PATH/base
-source $SHELL_CONF_PATH/docker
-source $SHELL_CONF_PATH/php
-
-# Source file, if it exists
+# Source configuration files
 if [ "$OPERATING_SYSTEM" = "macos" ]; then
     source "$SHELL_CONF_PATH/macos"
 else
     source "$SHELL_CONF_PATH/linux"
 fi
 
-# source third parties
+source $SHELL_CONF_PATH/base
+source $SHELL_CONF_PATH/docker
+source $SHELL_CONF_PATH/go
+source $SHELL_CONF_PATH/php
+
+# Source third parties
 source $HOME/.goto.sh
 
 # Export $PATH environment variable
