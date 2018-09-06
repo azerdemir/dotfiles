@@ -1,0 +1,2 @@
+# environment variables
+export GOPATH="$HOME/projects/go_ws"

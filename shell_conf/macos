@@ -1,8 +1,14 @@
 # Machine specific environment variables
-#export LANG="tr_TR.UTF-8"
-#export LC_ALL="tr_TR.UTF-8"
+export LANG="tr_TR.UTF-8"
+export LC_ALL="tr_TR.UTF-8"
 
+# environment variables
+export GOPATH="$HOME/Projects/go_ws"
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+export M2_HOME="/usr/local/Cellar/maven/3.3.3/libexec"
+export M2="$M2_HOME/bin"
+
+# aliases
 alias trs="rm -rf ~/.Trash/*"
 alias showfiles="defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app"
 alias hidefiles="defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app"
-

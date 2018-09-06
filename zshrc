@@ -50,13 +50,22 @@ source $ZSH/oh-my-zsh.sh
 
 # Environment variables
 export EDITOR="vim"
+SHELL_CONF_PATH="$HOME/.shell_conf"
 
-# OS aliases
-alias l="ls -l"
-alias la="ls -alh"
-alias cls="clear"
+# source configuration files
+source $SHELL_CONF_PATH/base
+source $SHELL_CONF_PATH/docker
+source $SHELL_CONF_PATH/php
+
+# Source file, if it exists
+if [ "$OPERATING_SYSTEM" = "macos" ]; then
+    source "$SHELL_CONF_PATH/macos"
+else
+    source "$SHELL_CONF_PATH/linux"
+fi
+
+# source third parties
+source $HOME/.goto.sh
 
 # Export $PATH environment variable
 export PATH
-
-source $HOME/repos/goto/goto.sh

@@ -3,7 +3,7 @@
 load_os_based_conf () {
     tmux_home=~/.tmux
 
-    if [[ $OPERATING_SYSTEM == "darwin" ]] ; then
+    if [ $OPERATING_SYSTEM = "macos" ] ; then
         tmux source-file "$tmux_home/tmux_macos.conf"
         exit
     else

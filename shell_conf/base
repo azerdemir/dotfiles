@@ -10,3 +10,7 @@ if [ -d "$HOME/.rbenv" ]; then
   eval "$(rbenv init -)"
 fi
 
+# OS aliases
+alias l="ls -l"
+alias la="ls -alh"
+alias cls="clear"
