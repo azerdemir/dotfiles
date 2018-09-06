@@ -1,0 +1,15 @@
+#!/bin/zsh
+
+load_os_based_conf () {
+    tmux_home=~/.tmux
+
+    if [[ $OPERATING_SYSTEM == "darwin" ]] ; then
+        tmux source-file "$tmux_home/tmux_macos.conf"
+        exit
+    else
+        tmux source-file "$tmux_home/tmux_linux.conf"
+        exit
+    fi
+}
+
+load_os_based_conf

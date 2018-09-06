@@ -1,7 +1,0 @@
-ANACONDA_BIN="$HOME/Programming/anaconda2/anaconda/bin"
-
-case ":$PATH:" in
-  *":$ANACONDA_BIN:"*) :;;
-  *) PATH="$ANACONDA_BIN:$PATH";;
-esac
-
