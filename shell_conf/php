@@ -4,3 +4,8 @@ case ":$PATH:" in
   *":$COMPOSER_BIN:"*) :;;
   *) PATH="$COMPOSER_BIN:$PATH";;
 esac
+
+function homestead() {
+  ( cd ~/.homestead && vagrant $* )
+}
+

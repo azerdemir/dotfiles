@@ -11,7 +11,12 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="lambda-mod"
-ZSH_THEME="dracula"
+#ZSH_THEME="dracula"
+POWERLEVEL9K_MODE="nerdfont-complete"
+ZSH_THEME="powerlevel9k/powerlevel9k"
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs anaconda)
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
@@ -55,6 +60,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Environment variables
 export EDITOR="vim"
+
 SHELL_CONF_PATH="$HOME/.shell_conf"
 
 # Source configuration files
@@ -68,6 +74,7 @@ source $SHELL_CONF_PATH/base
 source $SHELL_CONF_PATH/docker
 source $SHELL_CONF_PATH/go
 source $SHELL_CONF_PATH/php
+source $SHELL_CONF_PATH/python
 
 # Source third parties
 source $HOME/.goto.sh
