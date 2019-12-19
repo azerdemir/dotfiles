@@ -1,6 +1,0 @@
-export GO_BIN="$GOPATH/bin"
-
-case ":$PATH:" in
-  *":$GO_BIN:"*) :;;
-  *) PATH="$GO_BIN:$PATH";;
-esac

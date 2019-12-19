@@ -1,4 +1,0 @@
-MINICONDA_HOME=~/.miniconda3
-PATH=$MINICONDA_HOME/bin:$PATH
-source $MINICONDA_HOME/etc/profile.d/conda.sh
-

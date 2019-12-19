@@ -1,4 +1,4 @@
-# Source .zshrc.before file if exists 
+# Source .zshrc.before file if exists
 if [ -f "$HOME/.zshrc.before" ]; then
     source "$HOME/.zshrc.before"
 fi
@@ -10,13 +10,15 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-#ZSH_THEME="lambda-mod"
-#ZSH_THEME="dracula"
-POWERLEVEL9K_MODE="nerdfont-complete"
-ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs anaconda)
-POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+ZSH_THEME="ys"
+
+#ZSH_THEME="powerlevel9k/powerlevel9k"
+#POWERLEVEL9K_MODE="nerdfont-complete"
+#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs anaconda)
+#POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history)
+#POWERLEVEL9K_CONTEXT_TEMPLATE="azer"
+#POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+#POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
@@ -54,13 +56,11 @@ KEYTIMEOUT=1
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew colored-man tmux sublime docker extract history history-substring-search)
+plugins=(git brew tmux sublime docker extract history history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 
-# Environment variables
 export EDITOR="vim"
-
 SHELL_CONF_PATH="$HOME/.shell_conf"
 
 # Source configuration files
@@ -70,14 +70,30 @@ else
     source "$SHELL_CONF_PATH/linux"
 fi
 
-source $SHELL_CONF_PATH/base
+# OS aliases
+alias l="ls -l"
+alias la="ls -alh"
+alias cls="clear"
+
+# docker
 source $SHELL_CONF_PATH/docker
-source $SHELL_CONF_PATH/go
-source $SHELL_CONF_PATH/php
-source $SHELL_CONF_PATH/python
+
+# python
+if [ -d "$HOME/.miniconda3" ]; then
+    MINICONDA_HOME=~/.miniconda3
+    PATH=$MINICONDA_HOME/bin:$PATH
+    source $MINICONDA_HOME/etc/profile.d/conda.sh
+fi
 
 # Source third parties
-source $HOME/.goto.sh
+if [ -f "$HOME/.goto.sh" ]; then
+    source $HOME/.goto.sh
+fi
+
+# Source .zshrc.after file if exists
+if [ -f "$HOME/.zshrc.after" ]; then
+    source "$HOME/.zshrc.after"
+fi
 
 # Export $PATH environment variable
 export PATH
